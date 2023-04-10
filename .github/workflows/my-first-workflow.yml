@@ -1,5 +1,5 @@
 name: Test Project Workflow
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 jobs: 
     INSTALL-LIB:
         runs-on: ubuntu-latest
