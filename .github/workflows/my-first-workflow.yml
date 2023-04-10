@@ -18,7 +18,7 @@ jobs:
             - name: init-gradle
               run: gradle init
             - name: build with gradle
-              run: gradle clean build
+              run: gradle build
     Run-test:
         needs: Build
         runs-on: ubuntu-latest
