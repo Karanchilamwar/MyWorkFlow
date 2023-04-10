@@ -24,7 +24,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Run Test suit
-              run: ./gradlew test       
+              run: gradle clean test  
 
             
             
