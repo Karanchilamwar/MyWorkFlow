@@ -23,6 +23,8 @@ jobs:
         needs: Build
         runs-on: ubuntu-latest
         steps:
+            - name: init-gradle
+              run: gradle init
             - name: Run Test suit
               run: gradle clean test  
 
