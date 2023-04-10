@@ -1,7 +1,7 @@
 name: Test Project Workflow
 on: [push, workflow_dispatch]
 jobs: 
-    INSTALL-LIB:
+    Preparing-system:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -12,11 +12,13 @@ jobs:
                 distribution: 'adopt'
                 cache: 'gradle'
     Build:
+        needs: Preparing-system
         runs-on: ubuntu-latest
         steps:
             - name: build with gradle
               run: gradle clean build
     Run-test:
+        needs: Build
         runs-on: ubuntu-latest
         steps:
             - name: Run Test suit
