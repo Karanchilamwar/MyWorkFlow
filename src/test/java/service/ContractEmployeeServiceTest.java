@@ -31,7 +31,7 @@ public class ContractEmployeeServiceTest {
    public void CES_01_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
-        assertThat(result).isNotNull();
+        assertThat(result).isNull();
     }
 
     @Test()

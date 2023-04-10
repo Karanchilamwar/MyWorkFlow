@@ -8,10 +8,16 @@ jobs:
             - name: install jdk
               uses: actions/setup-java@v3
               with:
-                
                 java-version: '11'
                 distribution: 'adopt'
                 cache: 'gradle'
-            - name: Run test suit
-              run: gradle clean build -x test 
+            - name: build with maven
+              run: gradle clean build
+            - name: Run Test suit
+              run: ./gradlew test       
+            
+            
+         
+
+           
               

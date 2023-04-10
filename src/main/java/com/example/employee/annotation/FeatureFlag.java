@@ -13,4 +13,5 @@ public @interface FeatureFlag {
      Feature feature();
 
      Class returnType();
+
 }
