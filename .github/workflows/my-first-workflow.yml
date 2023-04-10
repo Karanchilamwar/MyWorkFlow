@@ -11,10 +11,17 @@ jobs:
                 java-version: '11'
                 distribution: 'adopt'
                 cache: 'gradle'
+    Build:
+        runs-on: ubuntu-latest
+        steps:
             - name: build with gradle
               run: gradle clean build
+    Run-test:
+        runs-on: ubuntu-latest
+        steps:
             - name: Run Test suit
               run: ./gradlew test       
+
             
             
          
