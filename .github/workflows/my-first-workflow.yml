@@ -26,7 +26,7 @@ jobs:
             - name: init-gradle
               run: gradle init
             - name: Run Test suit
-              run: ./gradlew test --parallel --max-workers=4
+              run: ./gradlew testJUnit --parallel --max-workers=4
 
             
             
