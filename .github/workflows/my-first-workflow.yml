@@ -23,10 +23,12 @@ jobs:
         needs: Build
         runs-on: ubuntu-latest
         steps:
-            - name: init-gradle
-              run: gradle init
-            - name: Run Test suit
-              run: ./gradlew testJUnit --parallel --max-workers=4
+          - name: init-gradle
+            run: gradle init
+          - name: build with gradle
+            run: gradle build
+          - name: Run Test suit
+            run: ./gradlew testJUnit --parallel --max-workers=4
 
             
             
