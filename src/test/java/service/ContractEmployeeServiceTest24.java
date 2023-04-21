@@ -26,66 +26,58 @@ public class ContractEmployeeServiceTest24 {
 
     }
     @Test()
-   public void CES_01_ShouldReturnResults() throws InterruptedException {
+   public void CES_01_ShouldReturnResults()  {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNotNull();
     }
 
     @Test()
-    public void CES_02_ShouldReturnResults() throws InterruptedException {
+    public void CES_02_ShouldReturnResults() {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_03_ShouldReturnResults() throws InterruptedException {
+    public void CES_03_ShouldReturnResults() {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_04_ShouldReturnResults() throws InterruptedException {
+    public void CES_04_ShouldReturnResults() {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNotNull();
     }
 
     @Test()
-    public void CES_015_ShouldReturnResults() throws InterruptedException {
+    public void CES_015_ShouldReturnResults()  {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNotNull();
     }
 
     @Test()
-    public void CES_025_ShouldReturnResults() throws InterruptedException {
+    public void CES_025_ShouldReturnResults() {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_09_ShouldReturnResults() throws InterruptedException {
+    public void CES_09_ShouldReturnResults()  {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_08_ShouldReturnResults() throws InterruptedException {
+    public void CES_08_ShouldReturnResults()  {
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
-        wait(1000);
         assertThat(result).isNotNull();
     }
 }
