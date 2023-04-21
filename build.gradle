@@ -62,9 +62,10 @@ task testJUnit(type: Test) {
     // Note that JUnit 5 has the ability to execute JUnit 4 tests as well
     useJUnitPlatform()
 
+    testLogging.showStandardStreams = true
+
     testLogging {
-        exceptionFormat "full"
-        events "started", "skipped", "passed", "failed"
-        showStandardStreams true
+        events "passed", "skipped", "failed"
     }
+    maxHeapSize = '1G'
 }
