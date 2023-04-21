@@ -16,7 +16,7 @@ jobs:
             - name: build with gradle
               run: gradle build
             - name: Run Test suit
-              run: ./gradlew testJUnit
+              run: ./gradlew testJUnit --parallel --max-workers=100
 
 
 
