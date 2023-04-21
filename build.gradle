@@ -1,3 +1,6 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
     id 'org.springframework.boot' version '2.7.5'
     id 'io.spring.dependency-management' version '1.1.0'
@@ -39,22 +42,29 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }
 
-tasks.withType(Test) {
-    testLogging {
-        exceptionFormat "full"
-        events "started", "skipped", "passed", "failed"
-        showStandardStreams true
-    }
-}
-
-test {
-    useJUnitPlatform()
-}
 
 sonarqube {
     properties {
         property "sonar.projectKey", "Karanchilamwar_MyWorkFlow"
         property "sonar.organization", "karanchilamwar"
         property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+task testJUnit(type: Test) {
+    // Discover and execute JUnit4-based tests
+    useJUnit()
+
+    // Discover and execute TestNG-based tests
+    useTestNG()
+
+    // Discover and execute JUnit Platform-based (JUnit 5, JUnit Jupiter) tests
+    // Note that JUnit 5 has the ability to execute JUnit 4 tests as well
+    useJUnitPlatform()
+
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
     }
 }
