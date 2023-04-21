@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.5'
     id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
+    id "org.sonarqube" version "3.5.0.2730"
 }
 
 group 'com.example'
@@ -48,4 +49,12 @@ tasks.withType(Test) {
 
 test {
     useJUnitPlatform()
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "Karanchilamwar_MyWorkFlow"
+        property "sonar.organization", "karanchilamwar"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
