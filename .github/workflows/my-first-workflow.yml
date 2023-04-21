@@ -11,24 +11,14 @@ jobs:
                 java-version: '11'
                 distribution: 'adopt'
                 cache: 'gradle'
-    Build:
-        needs: Preparing-system
-        runs-on: ubuntu-latest
-        steps:
             - name: init-gradle
               run: gradle init
             - name: build with gradle
               run: gradle build
-    Run-test:
-        needs: Build
-        runs-on: ubuntu-latest
-        steps:
-          - name: init-gradle
-            run: gradle init
-          - name: build with gradle
-            run: gradle build
-          - name: Run Test suit
-            run: ./gradlew testJUnit --parallel --max-workers=4
+            - name: Run Test suit
+              run: ./gradlew testJUnit --parallel --max-workers=4
+
+
 
             
             
