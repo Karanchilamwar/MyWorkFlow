@@ -16,7 +16,7 @@ jobs:
             - name: build with gradle
               run: gradle  build -x test
             - name: Run Test suit
-              run: gradle test --rerun-tasks
+              run: gradle test
 
 
 
