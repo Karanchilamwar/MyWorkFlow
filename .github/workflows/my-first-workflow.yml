@@ -14,9 +14,9 @@ jobs:
             - name: init-gradle
               run: gradle init
             - name: build with gradle
-              run: gradle build
+              run: gradle  build -x test
             - name: Run Test suit
-              run: gradle test --info
+              run: gradle test --rerun-tasks
 
 
 
