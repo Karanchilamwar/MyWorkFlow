@@ -3,6 +3,7 @@ package service;
 
 import com.example.employee.dto.EmployeeListResult;
 import com.example.employee.service.ContracterEmployeeService;
+import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import service.catagories.DiagnosticReport;
 
 import java.util.Collections;
 
@@ -17,6 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
+@Category(DiagnosticReport.class)
 public class ContractEmployeeServiceTest {
 
 

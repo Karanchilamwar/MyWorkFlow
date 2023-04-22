@@ -51,21 +51,32 @@ sonarqube {
     }
 }
 
-task testJUnit(type: Test) {
-    // Discover and execute JUnit4-based tests
-    useJUnit()
 
-    // Discover and execute TestNG-based tests
-    useTestNG()
-
-    // Discover and execute JUnit Platform-based (JUnit 5, JUnit Jupiter) tests
-    // Note that JUnit 5 has the ability to execute JUnit 4 tests as well
+test {
     useJUnitPlatform()
-
-    testLogging.showStandardStreams = true
-
     testLogging {
-        events "passed", "skipped", "failed"
+        events "PASSED", "SKIPPED", "FAILED"
+        exceptionFormat "full"
+        showStandardStreams = true
     }
-    maxHeapSize = '1G'
 }
+
+
+//task testJUnit(type: Test) {
+//    // Discover and execute JUnit4-based tests
+//    useJUnit()
+//
+//    // Discover and execute TestNG-based tests
+//    useTestNG()
+//
+//    // Discover and execute JUnit Platform-based (JUnit 5, JUnit Jupiter) tests
+//    // Note that JUnit 5 has the ability to execute JUnit 4 tests as well
+//    useJUnitPlatform()
+//
+//    testLogging.showStandardStreams = true
+//
+//    testLogging {
+//        events "passed", "skipped", "failed"
+//    }
+//    maxHeapSize = '1G'
+//}
