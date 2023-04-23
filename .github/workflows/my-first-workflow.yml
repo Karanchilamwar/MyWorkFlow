@@ -15,7 +15,7 @@ jobs:
               run: gradle init
             - name: build with gradle
               run: gradle  build -x test
-    Running Test suits - Service layer :
+    Running-Test-suits-Service-layer :
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
           run: gradle init
         - name: build with gradle
           run: gradle test --rerun-tasks --tests  '*service*'
-    Running Test suits - Controller layer:
+    Running-Test-suits-Controller-layer:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
