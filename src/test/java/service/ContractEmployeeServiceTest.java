@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import catagories.DiagnosticReport;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.Collections;

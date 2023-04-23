@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import catagories.Observation;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.Collections;
@@ -23,7 +22,6 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 @SpringJUnitConfig
 @ContextConfiguration(classes = AspectApplication.class)
-@Category(Observation.class)
 public class ContractEmployeeServiceTest6 {
 
 
