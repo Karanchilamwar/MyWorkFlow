@@ -15,9 +15,34 @@ jobs:
               run: gradle init
             - name: build with gradle
               run: gradle  build -x test
-            - name: Run Test suit
-              run: gradle test
-
+    Running Test suits - Service layer :
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: install jdk
+          uses: actions/setup-java@v3
+          with:
+            java-version: '11'
+            distribution: 'adopt'
+            cache: 'gradle'
+        - name: init-gradle
+          run: gradle init
+        - name: build with gradle
+          run: gradle test --rerun-tasks --tests  '*service*'
+    Running Test suits - Controller layer:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: install jdk
+          uses: actions/setup-java@v3
+          with:
+            java-version: '11'
+            distribution: 'adopt'
+            cache: 'gradle'
+        - name: init-gradle
+          run: gradle init
+        - name: build with gradle
+          run: gradle test --rerun-tasks --tests  '*controller*'
 
 
             
