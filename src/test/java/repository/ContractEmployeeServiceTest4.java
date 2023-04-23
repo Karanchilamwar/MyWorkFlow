@@ -1,4 +1,4 @@
-package service;
+package repository;
 
 
 import com.example.employee.AspectApplication;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 @SpringJUnitConfig
 @ContextConfiguration(classes = AspectApplication.class)
 @Category(DiagnosticReport.class)
-public class ContractEmployeeServiceTest3 {
+public class ContractEmployeeServiceTest4 {
 
 
     @Mock

@@ -1,4 +1,4 @@
-package controller;
+package mapper;
 
 
 import com.example.employee.AspectApplication;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 @SpringJUnitConfig
 @ContextConfiguration(classes = AspectApplication.class)
 @Category(Observation.class)
-public class ContractEmployeeServiceTest24 {
+public class ContractEmployeeServiceTest23 {
 
 
     @Mock
@@ -35,56 +35,56 @@ public class ContractEmployeeServiceTest24 {
 
     }
     @Test()
-   public void CES_01_ShouldReturnResults()  {
+   public void CES_01_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNotNull();
     }
 
     @Test()
-    public void CES_02_ShouldReturnResults() {
+    public void CES_02_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_03_ShouldReturnResults() {
+    public void CES_03_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_04_ShouldReturnResults() {
+    public void CES_04_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNotNull();
     }
 
     @Test()
-    public void CES_015_ShouldReturnResults()  {
+    public void CES_015_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNotNull();
     }
 
     @Test()
-    public void CES_025_ShouldReturnResults() {
+    public void CES_025_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_09_ShouldReturnResults()  {
+    public void CES_09_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(null);
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNull();
     }
 
     @Test()
-    public void CES_08_ShouldReturnResults()  {
+    public void CES_08_ShouldReturnResults(){
         when(contracterEmployeeService.getListOfEmployees()).thenReturn(new EmployeeListResult(Collections.EMPTY_LIST,0));
         var result=contracterEmployeeService.getListOfEmployees();
         assertThat(result).isNotNull();
