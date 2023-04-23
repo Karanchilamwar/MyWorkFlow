@@ -24,6 +24,7 @@ jobs:
                     ${{ runner.os }}-gradle-
     Running-Test-suits-Service-layer :
       runs-on: ubuntu-latest
+      needs: Preparing-system
       steps:
         - name: Checkout code
           uses: actions/checkout@v2
@@ -36,6 +37,7 @@ jobs:
           run: gradle test --rerun-tasks --tests  '*service*'
     Running-Test-suits-Controller-layer:
       runs-on: ubuntu-latest
+      needs: Preparing-system
       steps:
         - name: Checkout code
           uses: actions/checkout@v2
