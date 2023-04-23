@@ -10,7 +10,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
 
 
-@EnableConfigurationProperties()
+
 @SpringBootApplication()
 public class AspectApplication {
 

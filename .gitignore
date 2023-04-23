@@ -16,6 +16,8 @@ dist/
 # Log files
 *.log
 
+src/.DS_Store
+
 # Package files
 *.jar
 !gradle/wrapper/gradle-wrapper.jar

@@ -1,4 +1,4 @@
-package service.catagories;
+package catagories;
 
 public interface Observation {
 }

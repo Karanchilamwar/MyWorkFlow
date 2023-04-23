@@ -38,8 +38,9 @@ dependencies {
     testImplementation 'org.junit.platform:junit-platform-commons'
     testImplementation 'org.junit.platform:junit-platform-engine'
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+
+    testImplementation('org.junit.jupiter:junit-jupiter-engine:5.8.1')
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
 
 
@@ -85,12 +86,6 @@ tasks.withType(Test) {
         }
         info.events = debug.events
         info.exceptionFormat = debug.exceptionFormat
-
-        afterTest { TestDescriptor descriptor, TestResult result ->
-            if (result.resultType == org.gradle.api.tasks.testing.TestResult.ResultType.FAILURE) {
-                failedTests << ["${descriptor.className}::${descriptor.name}"]
-            }
-        }
 
         afterSuite { desc, result ->
             if (!desc.parent) { // will match the outermost suite
