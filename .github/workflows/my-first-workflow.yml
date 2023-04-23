@@ -25,6 +25,13 @@ jobs:
     Running-Test-suits-Service-layer :
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+        - name: Restore Gradle output from cache
+          uses: actions/cache@v2
+          with:
+                path: ~/.gradle/caches
+                key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}
         - name: run tests
           run: gradle test --rerun-tasks --tests  '*service*'
     Running-Test-suits-Controller-layer:
