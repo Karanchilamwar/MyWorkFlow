@@ -1,0 +1,46 @@
+name: parallel Process workflow
+on: [push, workflow_dispatch]
+jobs:
+    #Job to init gradle, build, cache
+    Preparing-system:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: install jdk
+              uses: actions/setup-java@v3
+              with:
+                java-version: '11'
+                distribution: 'adopt'
+                cache: 'gradle'
+            - name: init-gradle
+              run: gradle init
+            - name: build with gradle
+              run: gradle  build -x test
+            - name: Cache Gradle output
+              uses: actions/cache@v2
+              with:
+                  path: ~/.gradle/caches
+                  key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}
+                  restore-keys: |
+                    ${{ runner.os }}-gradle-
+
+    #Parallel jobs to run tests of different layer in parallel.
+    #Set-up engine and use gradle build from cache.
+    Service-layer-Tests :
+        - name: run service layer tests
+          run: gradle test --tests  '*service*'
+    Controller-layer-Test:
+        - name: run controller layer tests
+          run: gradle test --tests  '*controller*'
+    Mapper-layer-Test:
+        - name: run mapper layer tests
+          run: gradle test  --tests  '*mapper*'
+    Repository-layer-Test:
+        - name: run repository layer tests
+          run: gradle test  --tests  '*repository*'
+            
+            
+         
+
+           
+              

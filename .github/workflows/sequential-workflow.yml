@@ -1,4 +1,4 @@
-name: Test Project Workflow
+name: Sequential Process workflow
 on: [push, workflow_dispatch]
 jobs: 
     Preparing-system:
