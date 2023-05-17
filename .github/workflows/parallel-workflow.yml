@@ -26,8 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: Preparing-system
     strategy:
-    matrix:
-      package: ['*service*', '*controller*', '*mapper*', '*repository*']
+        matrix:
+          package: ['*service*', '*controller*', '*mapper*', '*repository*']
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
