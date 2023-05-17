@@ -27,7 +27,7 @@ jobs:
     needs: Preparing-system
     strategy:
     matrix:
-      package: [*service*, *controller*, *mapper*, *repository*]
+      package: ['*service*', '*controller*', '*mapper*', '*repository*']
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
